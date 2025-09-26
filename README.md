@@ -1,4 +1,8 @@
 # CloudflareTunnel + Streamlit in Docker
+
+<img width="1536" height="670" alt="scheme" src="https://github.com/user-attachments/assets/e69e7d71-43ff-4cc8-a8fb-6220b46c7495" />
+
+
 ## Quick Start
 
 1. Copy all files from this repository to your host:
