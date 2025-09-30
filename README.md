@@ -104,7 +104,7 @@ docker run -d -v "C:\path\to\all_apps:/app" -p 80:80 my-streamlit-nginx
 
 This way, you can keep all applications in one container.<br>
 
-## Two or more Streamlit applications in separate containers <br>For Example: http://app1.your_domain.com and<br>http://app2.your_domain.com<br>
+## Two or more Streamlit applications in separate containers <br>For Example: <br>http://app1.your_domain.com and<br>http://app2.your_domain.com<br>
 
 1. Simply run every container with specific port
 ```bash
