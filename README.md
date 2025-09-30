@@ -24,8 +24,8 @@ docker run -d -v "C:\path\to\file:/app" -p 80:80 my-streamlit-nginx
 ````
 ### You can also change the overall configuration of nginx or rewrite start.sh for your own purposes. <br> But in this case, you will need to start again from step 3 (i.e. download the image and run it).
 
-
-## Two or more Streamlit applications
+# There are two ways to launch multiple Streamlit apps.
+## Two or more Streamlit applications in ONE container (For Example: http:your_domain/app1/ and http:your_domain/app2/ )
 ### In order to run several applications on ONE container at once, you will need to make several changes.
 
 1. Open start.sh from the copied repository. Now we have one command to run app.py <br>Let's add another one for the second one (be sure to specify a new port for each application):
@@ -102,4 +102,27 @@ docker run -d -v "C:\path\to\all_apps:/app" -p 80:80 my-streamlit-nginx
 
 4. Rebuild the image and start the container. <br>
 
-This way, you can keep all applications in one container.
+This way, you can keep all applications in one container.<br>
+
+## Two or more Streamlit applications in separate containers <br> ( For Example: http://app1.your_domain.com and http://app2.your_domain.com )<br>
+
+1. Simply run every container with specific port
+```bash
+# For first app (-p 80:... or your own port)
+docker run -d -v "C:\path\to\app1:/app" -p 80:80 my-streamlit-nginx
+
+# For second app (-p 81:... or your own port)
+docker run -d -v "C:\path\to\app2:/app" -p 81:80 my-streamlit-nginx
+````
+
+2. Go to your Cloudflare Tunnel Settings. <br>
+Add new Published application Route: <br>
+Subdomain: Create new one <br>
+Service: http://localhost:81 (or your own port) <br>
+
+_So for "docker run -d -v "C:\path\to\app2:/app" -p 81:80 my-streamlit-nginx" you need set Service: http://localhost:81_ <br>
+_And for example for "docker run -d -v "C:\path\to\app3:/app" -p 82:80 my-streamlit-nginx" you need set Service: http://localhost:82_ <br>
+
+
+
+
