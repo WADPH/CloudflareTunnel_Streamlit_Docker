@@ -123,6 +123,11 @@ Service: http://localhost:81 (or your own port) <br>
 _So for "docker run -d -v "C:\path\to\app2:/app" -p 81:80 my-streamlit-nginx" you need set Service: http://localhost:81_ <br>
 _And for example for "docker run -d -v "C:\path\to\app3:/app" -p 82:80 my-streamlit-nginx" you need set Service: http://localhost:82_ <br>
 
+### Shortcuts: <br>
+
+1. Addidng requirements.txt file: pip install --no-cache-dir -r requirements.txt as first line before streamlit run. <br>
+2. To access your host — URL = host.docker.internal
+
 
 
 
