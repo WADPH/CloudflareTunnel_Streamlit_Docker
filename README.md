@@ -118,10 +118,10 @@ docker run -d -v "C:\path\to\app2:/app" -p 81:80 my-streamlit-nginx
 2. Go to your Cloudflare Tunnel Settings. <br>
 Add new Published application Route: <br>
 Subdomain: Create new one <br>
-Service: http://localhost:81 (or your own port) <br>
+Service: http://localhost:80 (or your own port) <br>
 
-_So for "docker run -d -v "C:\path\to\app2:/app" -p 81:80 my-streamlit-nginx" you need set Service: http://localhost:81_ <br>
-_And for example for "docker run -d -v "C:\path\to\app3:/app" -p 82:80 my-streamlit-nginx" you need set Service: http://localhost:82_ <br>
+_So for "docker run -d -v "C:\path\to\app2:/app" -p 81:80 my-streamlit-nginx" you need set Service: http://localhost:80_ in the firts tunnel/connector<br>
+_And for example for "docker run -d -v "C:\path\to\app3:/app" -p 82:80 my-streamlit-nginx" you need set Service: http://localhost:80_ on the second tunnel/connector<br>
 
 ### Shortcuts: <br>
 
